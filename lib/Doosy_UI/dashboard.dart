@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:untitled2/Doosy_UI/Dashboard_utils/carousel_slider.dart';
 import 'package:untitled2/Doosy_UI/Dashboard_utils/customized_card.dart';
 import 'package:untitled2/Doosy_UI/Dashboard_utils/customized_drawer.dart';
@@ -64,34 +63,15 @@ class _HomePageState extends State<HomePage> {
             child: Container(
               height: 230,
               color: Colors.transparent,
-              child: Column(
-                children: [
-                  CarouselSliderCustomized(images: images, currentIndex: currentIndex),
-                  SizedBox(height: 20),
-                  DotsIndicator(
-                    dotsCount: image_data.length,
-                    position: currentIndex.toDouble(),
-                    decorator: DotsDecorator(
-                      activeColor: Colors.blue,
-                      size: const Size.square(8.0),
-                      activeSize: const Size(18.0, 8.0),
-                      activeShape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              child: CarouselSliderCustomized(images: images, currentIndex: currentIndex),
             ),
           ),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-
               CustomizedCard(img:"assets/giftbox.png", Text: "Send Packages", icon: Icons.arrow_forward_outlined),
               CustomizedCard(img:"assets/giftbox.png", Text: "Send Packages", icon: Icons.arrow_forward_outlined)
-
             ],
           ),
           Padding(
